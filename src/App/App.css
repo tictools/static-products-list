@@ -1,0 +1,36 @@
+.app__wrapper {
+  border: 1px solid rgba(0,0,0,.25);
+  margin: 2rem auto 0;
+  width: 75vw;
+}
+
+.app__main {
+  padding: 1rem;
+}
+
+.app__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row;
+  gap: .5rem;
+}
+
+.product__card {
+  border-bottom: 3px solid rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product__image{
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,.05);
+  width: 200px;
+  object-fit: cover;
+  padding: .75rem;
+}

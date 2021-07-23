@@ -1,0 +1,20 @@
+.footer__wrapper{
+  background-color: #282c3422;
+  padding: 1rem;
+}
+
+.footer__container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__section{
+  align-items: center;
+  border: 1px solid #282c34;
+  color: #282c34;
+  display: flex;
+  font-weight: bold;
+  height: 50px;
+  justify-content: center;
+  width: 30%;
+}
