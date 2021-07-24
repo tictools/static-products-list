@@ -8,9 +8,22 @@
   padding: 1rem;
 }
 
-.app__section {
+.products__container {
   display: flex;
   flex-direction: column;
+}
+
+.products-section{
+  display: flex;
+  flex-direction: column;
+}
+
+.products-section__header{
+  border-top: 1px solid rgba(0,0,0,.5);
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  padding: .5rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .product__grid {
@@ -33,4 +46,22 @@
   width: 200px;
   object-fit: cover;
   padding: .75rem;
+}
+
+.product__name--sale{
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  margin: 0 .5rem;
+  width: 12px;
+}
+
+.product__name--nosale{
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  margin: 0 .5rem;
+  width: 12px;
 }
