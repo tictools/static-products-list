@@ -1,6 +1,8 @@
 import React from "react";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Item from "../components/Item/Item";
+import List from "../components/List/List";
 import "./App.css";
 
 function App() {
@@ -36,54 +38,17 @@ function App() {
 
   const bestSellers = products.filter((product) => product.bestSeller);
 
-  const getProductOnSaleClassName = (product) =>
-    product.onSale ? "product__name--sale" : "product__name--nosale";
-
-  const generalContent = products.map((product) => {
-    const onSaleClassName = getProductOnSaleClassName(product);
-    return (
-      <article className="product__card">
-        <img className="product__image" src={product.image} loading="lazy" />
-        <p className="product__name">
-          {product.product}
-          <span className={onSaleClassName}></span>
-        </p>
-        <p className="product__category">{product.category}</p>
-        <p className="product__price">${product.price}€</p>
-      </article>
-    );
-  });
-
-  const bestSellersContent = bestSellers.map((bestSeller) => {
-    const onSaleClassName = getProductOnSaleClassName(bestSeller);
-    return (
-      <article className="product__card">
-        <img className="product__image" src={bestSeller.image} loading="lazy" />
-        <p className="product__name">
-          {bestSeller.product}
-          <span className={onSaleClassName}></span>
-        </p>
-        <p className="product__category">{bestSeller.category}</p>
-        <p className="product__price">${bestSeller.price}€</p>
-      </article>
-    );
-  });
-
   return (
     <div className="app__wrapper">
       <Header />
-      <main className="app__main">
-        <div className="products__container">
-          <section className="products-section">
-            <h2 className="products-section__header">products</h2>
-            <div className="product__grid">{generalContent}</div>
-          </section>
-          <section className="products-section">
-            <h2 className="products-section__header">best sellers</h2>
-            <div className="product__grid">{bestSellersContent}</div>
-          </section>
-        </div>
-      </main>
+      {products ? (
+        <main className="app__main">
+          <div className="products__container">
+            <List products={products} />
+            <List products={bestSellers} />
+          </div>
+        </main>
+      ) : null}
       <Footer />
     </div>
   );

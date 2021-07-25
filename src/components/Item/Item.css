@@ -1,0 +1,32 @@
+.product__card {
+  border-bottom: 3px solid rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product__image{
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,.05);
+  width: 200px;
+  object-fit: cover;
+  padding: .75rem;
+}
+
+.product__name--sale{
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  margin: 0 .5rem;
+  width: 12px;
+}
+
+.product__name--nosale{
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  height: 12px;
+  margin: 0 .5rem;
+  width: 12px;
+}
