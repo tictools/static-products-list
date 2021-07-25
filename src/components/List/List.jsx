@@ -4,12 +4,13 @@ import "./List.css";
 
 export default class List extends React.Component {
   render() {
-    const { products } = this.props;
+    const { label, products } = this.props;
     const productsList =
-      products && products.map((product) => <Item product={product} />);
+      products &&
+      products.map((product, index) => <Item key={index} product={product} />);
     return (
       <section className="products-section">
-        <h2 className="products-section__header">best sellers</h2>
+        <h2 className="products-section__header">{label}</h2>
         <div className="product__grid">{productsList}</div>
       </section>
     );
